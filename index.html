@@ -8,23 +8,25 @@
 </head>
 
 <body>
-  
-  
+
+
   <button type="button" onclick="openForm()">ფორმის გახსნა</button>
-  
+
   <div id="postList">
-    
+
   </div>
   <div id="createPost">
     <form id="createPost">
-      <input type="text" name="title" placeholder="შეიყვანე სათაური">
+      <input type="text" name="title" id="title" placeholder="შეიყვანე სათაური">
       <textarea name="content" id="content" cols="30" rows="10" placeholder="შეიყვანე ტექსტი"></textarea>
       <button type="button"onclick="createNewPost()">
         დამატება
       </button>
     </form>
   </div>
-
+<script src="js/functions.js"></script>
+<script src="js/general.js"></script>
+<script src="js/storage.js"></script>
 </body>
 
 </html>
