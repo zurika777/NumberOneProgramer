@@ -15,9 +15,9 @@ const openForm = () => {
     }
 }
 
-const openPost = () => {
-  if (exist('posts')) {
-    return getJeyson('posts');
+const getPost = () => {
+  if (exists('posts')) {
+    return getJson('posts');
   }else{
     return [];
   }
@@ -26,10 +26,10 @@ const openPost = () => {
 const createNewPost = () => {
    let titleValue = document.getElementById('title').value;
    let content = document.getElementById('content').value;
-   let posts = openPost();
-   if (posts.lenght > 0) {
+   let posts = getPost();
+   if (posts.length > 0) {
      posts.unshift({
-       id: posts.lenght + 1,
+       id: posts.length + 1,
        title: titleValue,
        content: contentValue
      })
@@ -45,7 +45,7 @@ const createNewPost = () => {
    
 }
 
-const openPost = () => {
+const openPost = (id) => {
   let content = document.getElementById(`content-${id}`);
   if (content.style.display === 'none') {
     content.style.display = 'block';
@@ -56,20 +56,20 @@ const openPost = () => {
 
 
 Window.onload =() => {
-  let posts = openPost();
-  if (posts.lenght > 0){
-    for(let i=0; i< posts.lenght; i++){
+  let posts = getPost();
+  if (posts.length > 0){
+    for(let i=0; i< posts.length; i++){
       let post = document.createElement('div');
-      posts.className = 'post';
+      post.className = 'post';
       let title = document.createElement('h3');
       title.innerText = posts[i].title;
-      title.setAttribute('id', `openPost${posts[i].id}`);
+      title.setAttribute('onclick', `openPost(${posts[i].id})`);
       let content = document.createElement('p');
       content.innerText = poats[i].content;
       content.setAttribute('id', `content-${posts[i].id}`)
-      posts.appendChild(title);
-      posts.appendChild(content);
-      postsList.appendChild(post);
+      post.appendChild(title);
+      post.appendChild(content);
+      postList.appendChild(post);
     }
   }
   
