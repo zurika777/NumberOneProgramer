@@ -25,7 +25,7 @@ const getPost = () => {
 
 const createNewPost = () => {
    let titleValue = document.getElementById('title').value;
-   let content = document.getElementById('content').value;
+   let contentValue = document.getElementById('content').value;
    let posts = getPost();
    if (posts.length > 0) {
      posts.unshift({
@@ -33,7 +33,7 @@ const createNewPost = () => {
        title: titleValue,
        content: contentValue
      })
-     
+
    }else{
      posts.push({
        id: 1,
@@ -42,7 +42,7 @@ const createNewPost = () => {
      })
    }
    set('posts', JSON.stringify(posts));
-   
+
 }
 
 const openPost = (id) => {
@@ -54,8 +54,7 @@ const openPost = (id) => {
   }
 }
 
-
-Window.onload =() => {
+window.onload =() => {
   let posts = getPost();
   if (posts.length > 0){
     for(let i=0; i< posts.length; i++){
@@ -65,12 +64,12 @@ Window.onload =() => {
       title.innerText = posts[i].title;
       title.setAttribute('onclick', `openPost(${posts[i].id})`);
       let content = document.createElement('p');
-      content.innerText = poats[i].content;
+      content.innerText = posts[i].content;
       content.setAttribute('id', `content-${posts[i].id}`)
       post.appendChild(title);
       post.appendChild(content);
       postList.appendChild(post);
     }
   }
-  
+
 }
