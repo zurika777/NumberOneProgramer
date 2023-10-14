@@ -47,29 +47,38 @@ const createNewPost = () => {
 
 const openPost = (id) => {
   let content = document.getElementById(`content-${id}`);
-  if (content.style.display === 'none') {
+  if (content.style.display === 'none' || !content.style.display) {
     content.style.display = 'block';
+      console.log(content.style.display)
   }else{
     content.style.display = 'none'
   }
+}
+
+const createPostHTML  = (value) => {
+let post = document.createElement('div');
+      post.className = 'post';
+      let title = document.createElement('h3');
+      title.innerText = value.title;
+      title.setAttribute('onclick', `openPost(${value.id})`);
+      let content = document.createElement('p');
+      content.innerText = value.content;
+      content.setAttribute('id', `content-${value.id}`)
+      post.appendChild(title);
+      post.appendChild(content);
+      postList.appendChild(post);
 }
 
 window.onload =() => {
   let posts = getPost();
   if (posts.length > 0){
     for(let i=0; i< posts.length; i++){
-      let post = document.createElement('div');
-      post.className = 'post';
-      let title = document.createElement('h3');
-      title.innerText = posts[i].title;
-      title.setAttribute('onclick', `openPost(${posts[i].id})`);
-      let content = document.createElement('p');
-      content.innerText = posts[i].content;
-      content.setAttribute('id', `content-${posts[i].id}`)
-      post.appendChild(title);
-      post.appendChild(content);
-      postList.appendChild(post);
+        createPostHTML(posts[i]);
     }
+  }else {
+      let post = document.createElement('h3');
+      post.innerText = " პოსტები არ არის";
+      postList.append(post);
   }
 
 }
