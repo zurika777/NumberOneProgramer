@@ -32,16 +32,29 @@ const createNewPost = () => {
        id: posts.length + 1,
        title: titleValue,
        content: contentValue
-     })
+     });
+        createPostHTML ({
+            id: 1,
+       title: titleValue,
+       content: contentValue
+       })
 
    }else{
      posts.push({
-       id: 1,
+       id: posts.length + 1,
        title: titleValue,
        content: contentValue
-     })
+     });
+       createPostHTML ({
+            id: 1,
+       title: titleValue,
+       content: contentValue
+       })
    }
    set('posts', JSON.stringify(posts));
+    document.getElementById("title").value = "";
+    document.getElementById("content").value = "";
+    openForm();
 
 }
 
@@ -55,7 +68,11 @@ const openPost = (id) => {
   }
 }
 
-const createPostHTML  = (value) => {
+const createPostHTML  = (value, top = false) => {
+    let noPosts = document.getElementById('noPosts');
+    if(noPosts) {
+        noPosts.remove();
+    }
 let post = document.createElement('div');
       post.className = 'post';
       let title = document.createElement('h3');
@@ -66,18 +83,24 @@ let post = document.createElement('div');
       content.setAttribute('id', `content-${value.id}`)
       post.appendChild(title);
       post.appendChild(content);
-      postList.appendChild(post);
+    if(top){
+      postList.append(post);
+    }else{
+        postList.prepend(post)
+
+    }
 }
 
 window.onload =() => {
   let posts = getPost();
   if (posts.length > 0){
     for(let i=0; i< posts.length; i++){
-        createPostHTML(posts[i]);
+        createPostHTML(posts[i],  true);
     }
   }else {
       let post = document.createElement('h3');
       post.innerText = " პოსტები არ არის";
+      post.setAttribute('id' , 'noPosts');
       postList.append(post);
   }
 
