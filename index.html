@@ -10,8 +10,27 @@
 
 <body>
 
+<div id="demo"></div>
+<button type="button" id="openForm" onclick="openForm()">ფორმის გახსნა</button>
 
-  <button type="button" onclick="openForm()" id="openForm">ფორმის გახსნა</button>
+<div id="postList"></div>
+
+<div id="createForm">
+    <form action="" id="createPost">
+        <input type="text" id="title" name="title" placeholder="შეიყვანე სათაური">
+        <textarea name="content" id="content" cols="30" rows="10" placeholder="შეიყვანე ტექსტი"></textarea>
+
+        <button type="button" onclick="createNewPost()">დამატება</button>
+    </form>
+</div>
+
+<!--<div id="demo">
+
+
+
+</div>-->
+
+<!--  <button type="button" onclick="openForm()" id="openForm">ფორმის გახსნა</button>
 
   <div id="postList">
 
@@ -25,10 +44,11 @@
         დამატება
       </button>
     </form>
-  </div>
+  </div>-->
 <script src="js/functions.js"></script>
 <script src="js/general.js"></script>
 <script src="js/storage.js"></script>
+<script src="js/request.js"></script>
 </body>
 
 </html>
