@@ -1,3 +1,15 @@
 {
-    "noPosts": "ჩანაწერი არ მოიძებნა"
+    "ka" : {
+    "noPosts": "ჩანაწერი არ მოიძებნა",
+    "closeForm": "ფორმის დახურვა",
+    "openForm": "ფორმის გახსნა"
+
+    },
+
+    "en" : {
+    "noPosts": "NO posts dound",
+    "closeForm": "Close form",
+    "openForm": "openForm"
+
+    }
 }

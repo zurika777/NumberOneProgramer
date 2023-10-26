@@ -104,6 +104,14 @@ createNewHtml(posts[i], true);
 }
 
 
+
+
+const firstAsinc = async () => {
+let result = fetch(path);
+    let data = await result.JSON();
+    slert(data.noPosts)
+}
+
 /*const mydrive = (some) => {
     document.getElementById("demo").innerHTML = some;
 }
@@ -117,12 +125,9 @@ let result = calculator(2, 5);
 mydrive(result);*/
 
 /*
-const firstAsinc = async () => {
-let result = fetch(path);
-    let data = await result.JSON();
-    slert(data.noposts)
-}
-firstAsinc();*/
+
+
+*/
 
 
 
