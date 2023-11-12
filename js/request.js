@@ -1,4 +1,21 @@
-let path = "https://raw.githubusercontent.com/zurika777/NumberOneProgramer/main/data/lang.json";
+/*
+let data = [-1, 1, 2, -2, 3, -3, -4, 4, -5, 5, -6, 6];
+
+const filterData = (data, callBackfilter) => {
+   return data.filter(callBackfilter);
+
+
+}
+    console.log(filterData(data, (x) => x > 0));
+    console.log(filterData(data, (x) => x < 0));
+*/
+
+
+
+
+
+
+    //console.log(filterData(data, (x) => x < 0));
 
 /*let ajaxExample = new XMLHttpRequest();
 ajaxExample.open("GET", path, true);
@@ -12,7 +29,7 @@ ajaxExample.onload = function() {
 ajaxExample.send();*/
 
 
-const firstAsync = async () => {
+/*const firstAsync = async () => {
     return   await  fetch(path).then(response => {
       let data =  response.json();
 
@@ -22,4 +39,4 @@ const firstAsync = async () => {
 
 
 }
-firstAsync();
+firstAsync();*/

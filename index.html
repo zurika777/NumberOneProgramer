@@ -10,25 +10,19 @@
 
 <body>
 
-<div id="demo"></div>
-<button type="button" id="openForm" onclick="openForm()">ფორმის გახსნა</button>
 
+
+<button type="button" id="openForm" onclick="openForm()"></button>
+<button type="button" id="swichLanguage" onclick="swichLanguage()">English</button>
 <div id="postList"></div>
-
 <div id="createForm">
     <form action="" id="createPost">
-        <input type="text" id="title" name="title" placeholder="შეიყვანე სათაური">
+        <input type="text" name="title" id="title" placeholder="შეიყვანე სათაური">
         <textarea name="content" id="content" cols="30" rows="10" placeholder="შეიყვანე ტექსტი"></textarea>
-
-        <button type="button" onclick="createNewPost()">დამატება</button>
+        <button type="button"  id="createNewPost" onclick=createNewPost()>დამატება</button>
     </form>
 </div>
 
-<!--<div id="demo">
-
-
-
-</div>-->
 
 <!--  <button type="button" onclick="openForm()" id="openForm">ფორმის გახსნა</button>
 
