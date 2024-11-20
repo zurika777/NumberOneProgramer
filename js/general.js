@@ -101,6 +101,7 @@ const swichLanguage = () => {
     }
     document.getElementById('openForm').innerText = langs[language].openForm;
     document.getElementById('noPosts').innerText = langs[language].noPosts;
+    document.getElementById('add').innerText = langs[language].add;
 }
 
 const pageOnload = async  () => {
