@@ -1,5 +1,6 @@
 let formState = false;
 let path = "https://raw.githubusercontent.com/zurika777/NumberOneProgramer/main/data/lang.json";
+
 let language = 'ka';
 let langs = [];
 
@@ -34,12 +35,12 @@ const createNewPost = () => {
         posts.unshift({
             id: posts.length + 1,
             title: titleValue,
-            constent: contentValue
+            content: contentValue
         });
         createNewHtml({
             id: 1,
             title: titleValue,
-            constent: contentValue
+            content: contentValue
         });
     }else{
         posts.push({
@@ -50,7 +51,7 @@ const createNewPost = () => {
         createNewHtml({
             id: posts.length +1,
             title: titleValue,
-            constent: contentValue
+            content: contentValue
         })
     }
     set("posts", JSON.stringify(posts));
@@ -103,11 +104,11 @@ const swichLanguage = () => {
 }
 
 const pageOnload = async  () => {
-    let fetchdata = await fetch(path).then((response) => {
+    let fetchData = await fetch(path).then((response) => {
         return response.json();
     });
-    if(fetchdata){
-        langs = fetchdata;
+    if(fetchData){
+        langs = fetchData;
     }
     let posts = getPosts();
     if(posts.length > 0){
